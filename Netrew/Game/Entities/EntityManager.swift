@@ -54,7 +54,7 @@ final class EntityManager {
             }
             let paths = graph.findPath(from: start, to: end)
             for path in paths {
-                print("\(path.connectedNodes)")
+                print("\(path.findPath(to: end))")
             }
             print(paths.count)
         }

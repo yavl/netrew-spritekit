@@ -44,11 +44,13 @@ final class GameScene: SKScene, UIGestureRecognizerDelegate {
         let terrain = Terrain()
         entityManager.add(terrain)
         
-        let house = House()
+        let house = House(x: 0, y: 0)
         entityManager.add(house)
         
-        let human = Human()
+        let human = Human(x: -100, y: 0)
         entityManager.add(human)
+        
+        entityManager.calculateObstacles()
 
         self.lastUpdateTime = 0
         

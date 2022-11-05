@@ -9,8 +9,11 @@ import GameplayKit
 
 final class EntityManager {
     
-    var entities = Set<GKEntity>()
     let scene: SKScene
+    
+    var entities = Set<GKEntity>()
+    var obstacleSpriteNodes: [SKSpriteNode] = []
+    var polygonObstacles: [GKPolygonObstacle] = []
     
     init(scene: SKScene) {
         self.scene = scene
@@ -28,5 +31,32 @@ final class EntityManager {
             spriteNode.removeFromParent()
         }
         entities.remove(entity)
+    }
+    
+    func calculateObstacles() {
+        for entity in entities {
+            guard entity is House else { continue }
+            guard let spriteNode = entity.component(ofType: SpriteComponent.self)?.node else { continue }
+            obstacleSpriteNodes.append(spriteNode)
+        }
+        polygonObstacles = SKNode.obstacles(fromNodeBounds: obstacleSpriteNodes)
+        var graph: GKObstacleGraph = GKObstacleGraph(obstacles: polygonObstacles, bufferRadius: 1)
+        
+        if let human = entities.first(where: { $0 is Human }), let spriteNode = human.component(ofType: SpriteComponent.self)?.node {
+            let start = GKGraphNode2D(point: vector_float2(x: Float(spriteNode.position.x), y: Float(spriteNode.position.y)))
+            let end = GKGraphNode2D(point: vector_float2(x: 100, y: 0))
+            graph.connectUsingObstacles(node: start)
+            graph.connectUsingObstacles(node: end)
+            if let noda = graph.nodes {
+                for each in noda {
+                    print("noda")
+                }
+            }
+            let paths = graph.findPath(from: start, to: end)
+            for path in paths {
+                print("\(path.connectedNodes)")
+            }
+            print(paths.count)
+        }
     }
 }

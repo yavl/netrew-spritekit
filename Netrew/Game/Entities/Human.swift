@@ -9,11 +9,12 @@ import GameplayKit
 
 final class Human: GKEntity {
     
-    override init() {
+    init(x: CGFloat, y: CGFloat) {
         super.init()
         
         let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: "circle"))
         spriteComponent.node.zPosition = 2
+        spriteComponent.node.position = CGPoint(x: x, y: y)
         addComponent(spriteComponent)
     }
     

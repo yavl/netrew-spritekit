@@ -9,11 +9,13 @@ import GameplayKit
 
 final class House: GKEntity {
     
-    override init() {
+    private let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: "house"))
+
+    init(x: CGFloat, y: CGFloat) {
         super.init()
         
-        let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: "house"))
         spriteComponent.node.zPosition = 1
+        spriteComponent.node.position = CGPoint(x: x, y: y)
         addComponent(spriteComponent)
     }
     

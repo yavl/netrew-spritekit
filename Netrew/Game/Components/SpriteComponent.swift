@@ -7,7 +7,7 @@
 
 import GameplayKit
 
-class SpriteComponent: GKComponent {
+final class SpriteComponent: GKComponent {
     
     let node: SKSpriteNode
     

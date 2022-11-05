@@ -7,7 +7,7 @@
 
 import GameplayKit
 
-class Terrain: GKEntity {
+final class Terrain: GKEntity {
     
     override init() {
         super.init()

@@ -7,7 +7,7 @@
 
 import GameplayKit
 
-class EntityManager {
+final class EntityManager {
     
     var entities = Set<GKEntity>()
     let scene: SKScene

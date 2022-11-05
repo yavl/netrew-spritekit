@@ -7,7 +7,7 @@
 
 import GameplayKit
 
-class Human: GKEntity {
+final class Human: GKEntity {
     
     override init() {
         super.init()

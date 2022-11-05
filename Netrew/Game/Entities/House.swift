@@ -7,7 +7,7 @@
 
 import GameplayKit
 
-class House: GKEntity {
+final class House: GKEntity {
     
     override init() {
         super.init()

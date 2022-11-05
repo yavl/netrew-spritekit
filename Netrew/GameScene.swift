@@ -8,7 +8,7 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene, UIGestureRecognizerDelegate {
+final class GameScene: SKScene, UIGestureRecognizerDelegate {
     
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()

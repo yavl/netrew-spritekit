@@ -13,6 +13,7 @@ final class House: GKEntity {
         super.init()
         
         let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: "house"))
+        spriteComponent.node.zPosition = 1
         addComponent(spriteComponent)
     }
     

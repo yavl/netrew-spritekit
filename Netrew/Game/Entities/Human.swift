@@ -13,6 +13,7 @@ final class Human: GKEntity {
         super.init()
         
         let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: "circle"))
+        spriteComponent.node.zPosition = 2
         addComponent(spriteComponent)
     }
     

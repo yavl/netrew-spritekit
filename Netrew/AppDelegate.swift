@@ -7,6 +7,12 @@
 
 import UIKit
 
+struct Environment {
+    let hud = HudManager()
+}
+
+let env = Environment()
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

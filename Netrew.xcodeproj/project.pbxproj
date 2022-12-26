@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9F596F8295A427F00285DA0 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F596F7295A427F00285DA0 /* DebugView.swift */; };
+		C9F596FB295A439900285DA0 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C9F596FA295A439900285DA0 /* SnapKit */; };
+		C9F59701295A476D00285DA0 /* HudManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F59700295A476D00285DA0 /* HudManager.swift */; };
 		F5B5C3DB26E7AC5D003FF42A /* SpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5C3DA26E7AC5D003FF42A /* SpriteComponent.swift */; };
 		F5B5C3DE26E7AD65003FF42A /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5C3DD26E7AD65003FF42A /* House.swift */; };
 		F5B5C3E026E7AE23003FF42A /* EntityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5C3DF26E7AE23003FF42A /* EntityManager.swift */; };
@@ -22,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C9F596F7295A427F00285DA0 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
+		C9F59700295A476D00285DA0 /* HudManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudManager.swift; sourceTree = "<group>"; };
 		F5B5C3DA26E7AC5D003FF42A /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
 		F5B5C3DD26E7AD65003FF42A /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		F5B5C3DF26E7AE23003FF42A /* EntityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityManager.swift; sourceTree = "<group>"; };
@@ -43,12 +48,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9F596FB295A439900285DA0 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C9F596F6295A426200285DA0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C9F596F7295A427F00285DA0 /* DebugView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C9F596FF295A474400285DA0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C9F59700295A476D00285DA0 /* HudManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		F5B5C3D926E7AC4D003FF42A /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +109,8 @@
 		F5E4FADD26E7A60400D65B23 /* Netrew */ = {
 			isa = PBXGroup;
 			children = (
+				C9F596FF295A474400285DA0 /* Helpers */,
+				C9F596F6295A426200285DA0 /* Views */,
 				F5E4FAF326E7A7D000D65B23 /* Game */,
 				F5E4FADE26E7A60400D65B23 /* AppDelegate.swift */,
 				F5E4FAE026E7A60400D65B23 /* GameScene.sks */,
@@ -125,6 +149,9 @@
 			dependencies = (
 			);
 			name = Netrew;
+			packageProductDependencies = (
+				C9F596FA295A439900285DA0 /* SnapKit */,
+			);
 			productName = Netrew;
 			productReference = F5E4FADB26E7A60400D65B23 /* Netrew.app */;
 			productType = "com.apple.product-type.application";
@@ -152,6 +179,9 @@
 				Base,
 			);
 			mainGroup = F5E4FAD226E7A60400D65B23;
+			packageReferences = (
+				C9F596F9295A439900285DA0 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = F5E4FADC26E7A60400D65B23 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -183,11 +213,13 @@
 				F5E4FAE526E7A60400D65B23 /* GameScene.swift in Sources */,
 				F5B5C3E426E7BE77003FF42A /* Terrain.swift in Sources */,
 				F5E4FAE726E7A60400D65B23 /* GameViewController.swift in Sources */,
+				C9F596F8295A427F00285DA0 /* DebugView.swift in Sources */,
 				F5B5C3E026E7AE23003FF42A /* EntityManager.swift in Sources */,
 				F5B5C3DB26E7AC5D003FF42A /* SpriteComponent.swift in Sources */,
 				F5B5C3DE26E7AD65003FF42A /* House.swift in Sources */,
 				F5E4FADF26E7A60400D65B23 /* AppDelegate.swift in Sources */,
 				F5B5C3E626E7BF69003FF42A /* Human.swift in Sources */,
+				C9F59701295A476D00285DA0 /* HudManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +415,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C9F596F9295A439900285DA0 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = exactVersion;
+				version = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C9F596FA295A439900285DA0 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9F596F9295A439900285DA0 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F5E4FAD326E7A60400D65B23 /* Project object */;
 }

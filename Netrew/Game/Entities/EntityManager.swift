@@ -9,11 +9,10 @@ import GameplayKit
 
 final class EntityManager {
     
-    let scene: SKScene
-    
-    var entities = Set<GKEntity>()
-    var obstacleSpriteNodes: [SKSpriteNode] = []
-    var polygonObstacles: [GKPolygonObstacle] = []
+    private let scene: SKScene
+    private var entities = Set<GKEntity>()
+    private var obstacleSpriteNodes: [SKSpriteNode] = []
+    private var polygonObstacles: [GKPolygonObstacle] = []
     
     init(scene: SKScene) {
         self.scene = scene

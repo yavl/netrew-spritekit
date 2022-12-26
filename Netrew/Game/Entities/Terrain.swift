@@ -15,7 +15,8 @@ final class Terrain: GKEntity {
         let texture = SKTexture(imageNamed: "terrain")
         texture.filteringMode = .nearest
         let spriteComponent = SpriteComponent(texture: texture)
-        spriteComponent.node.zPosition = 0
+        spriteComponent.node.zPosition = 0.5
+        spriteComponent.node.setScale(64.0)
         addComponent(spriteComponent)
     }
     

@@ -6,10 +6,19 @@
 //
 
 import UIKit
+import SnapKit
 import SpriteKit
 import GameplayKit
 
 final class GameViewController: UIViewController {
+    
+    private let debugView = DebugView()
+    
+    private let crossView: UIImageView = {
+        let view = UIImageView(image: UIImage(systemName: "plus")?.withRenderingMode(.alwaysTemplate))
+        view.tintColor = .lightGray
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +40,32 @@ final class GameViewController: UIViewController {
                 // Present the scene
                 if let view = self.view as! SKView? {
                     view.presentScene(sceneNode)
-                    
                     view.ignoresSiblingOrder = true
-                    
                     view.showsFPS = true
                     view.showsNodeCount = true
                 }
+                
+                env.hud.configure(debugView: debugView, camera: sceneNode.camera)
             }
+        }
+        
+        setupViews()
+        setupLayout()
+    }
+    
+    private func setupViews() {
+        view.addSubview(debugView)
+        view.addSubview(crossView)
+    }
+    
+    private func setupLayout() {
+        crossView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+        
+        debugView.snp.makeConstraints { make in
+            make.top.left.right.equalToSuperview()
+            make.height.equalToSuperview().dividedBy(3)
         }
     }
 
